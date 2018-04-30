@@ -1,0 +1,44 @@
+<% include partials/header %>
+
+<div class="container">
+	<div id="todo">
+		<h1 class="header">To-Do List <a href="/todo/new"  role="button"><i class="fa fa-plus"></i></a></h1>
+	<!--<input type="text" name="Add To-Do" placeholder="Add To-Do">-->
+<% for (var i=0;i<todo.length;i++){ %>
+	<ul class="ul" id="boss">
+		<li>
+			
+				<form  action="/todo/<%= todo[i]._id %>?_method=DELETE" method="POST">
+					<button>
+			<span><i class="fa fa-trash" ></i> </span>
+			</button>
+		
+		
+		<%= todo[i].name %>
+			</form>
+		</li>
+		<!--<li><span><i class="fa fa-trash" ></i> </span> Take a Shower</li>-->
+	 <!--<li><span><i class="fa fa-trash" ></i> </span> Have Breakfast</li>-->
+	</ul>
+	<% } %>	
+	</div>
+	
+	
+	
+	<!--<a class="ui orange basic button" href="/tech/
+	
+	/edit ">Edit</a>-->
+
+ <!--<form id="delete" action="/tech/?_method=DELETE" method="POST">-->
+ <!--   <button class="ui red basic button">Delete</button>-->
+ <!--  </form>-->
+	
+
+</div>
+
+<div class="container ss">
+  
+<a href="logout" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Sign Out</a> 
+</div>
+
+<% include partials/footer %>
